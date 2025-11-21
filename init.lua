@@ -17,7 +17,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>o', ':update <CR> :source<CR>')
-
+map('n', '<leader>ca', ':!javac % <CR>')
 
 --Packer manager
 vim.pack.add({
@@ -56,8 +56,8 @@ vim.keymap.set('n', '<leader>e', ':Oil<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>S', ':sf #<CR>')
+map('n', '<leader>q', ':wq <CR>')
 
- 
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
 
 vim.cmd("colorscheme vague")
