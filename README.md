@@ -8,10 +8,5 @@ My plan is to have a single init.lua file, as well as 'after' directory with eac
 
 I have to set up an lsp, and will be setting up the java jdtls as best as I can (java is not easy to set up).
 
-Anyone is more than welcome to suggest new configuration lines and techniques as long as it's not AI generated.
-
-All these files will be uploaded from my terminal, using 'git' and git commands locally. Some of these files won't make much
-sense to more experienced developers but this is a learning curve.
-
 
 
