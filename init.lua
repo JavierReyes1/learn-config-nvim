@@ -14,7 +14,7 @@ vim.o.undofile = true
 vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.g.mapleader = " "
-local map = vim.keymap.set
+local map = vim.keymap.set 		--I created a variable called map, i was tired of typing vim.keymap.set for each new keymap
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>o', ':update <CR> :source<CR>')
 map('n', '<leader>ca', ':!javac % <CR>')
