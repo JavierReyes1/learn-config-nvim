@@ -18,6 +18,7 @@ local map = vim.keymap.set 		--I created a variable called map, i was tired of t
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>o', ':update <CR> :source<CR>')
 map('n', '<leader>ca', ':!javac % <CR>')
+map("i", "{", "{\n}\n<Esc>O", { noremap = true, silent = true })
 
 --Packer manager
 vim.pack.add({
