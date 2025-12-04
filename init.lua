@@ -19,7 +19,7 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>o', ':update <CR> :source<CR>')
 map('n', '<leader>ca', ':!javac % <CR>')
 map('i', '{', '<CR><Tab>{\n}\n<Esc>kO', { noremap = true, silent = true })
-
+vim.cmd("iabbr sysout System.out.println();")   
 --Packer manager
 vim.pack.add({
 	{ src = "https://github.com/vague2k/vague.nvim" },
