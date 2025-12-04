@@ -19,6 +19,7 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>o', ':update <CR> :source<CR>')
 map('n', '<leader>ca', ':!javac % <CR>')
 map('i', '{', '<CR><Tab>{\n}\n<Esc>kO', { noremap = true, silent = true })
+map('i', '(', '()<Esc>i',{noremap = true , silent = true})
 vim.cmd("iabbr sysout System.out.println();<Esc>2hi")   
 vim.cmd("iabbr psvm main public static void main(String[]args)")   
 --Packer manager
