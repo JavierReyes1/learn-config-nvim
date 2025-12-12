@@ -29,6 +29,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	{ src = "https://github.com/nvimtools/none-ls.nvim" },
 })
 
 --AutoCompletion
@@ -47,6 +48,9 @@ require "mason".setup()
 require "mini.pick".setup()
 require "oil".setup()
 require "autoclose".setup()
+
+vim.lsp.enable('java', {cmd = {true}})
+
 --treesitter
 require "nvim-treesitter.configs".setup({
   ensure_installed = {"svelte", "typescript", "javascript", "java"},

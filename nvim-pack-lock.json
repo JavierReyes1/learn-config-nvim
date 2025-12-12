@@ -12,6 +12,10 @@
       "rev": "b4351399db5043a781a32699a1bde60b747f711f",
       "src": "https://github.com/echasnovski/mini.pick"
     },
+    "none-ls.nvim": {
+      "rev": "5abf61927023ea83031753504adb19630ba80eef",
+      "src": "https://github.com/nvimtools/none-ls.nvim"
+    },
     "nvim-lspconfig": {
       "rev": "b7c48a7111534b66bee077da8035ac7208a294ff",
       "src": "https://github.com/neovim/nvim-lspconfig"
