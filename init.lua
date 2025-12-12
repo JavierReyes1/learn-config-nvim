@@ -14,36 +14,25 @@ vim.o.undofile = true
 vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.g.mapleader = " "
-local map = vim.keymap.set 		--I created a variable called map, i was tired of typing vim.keymap.set for each new keymap
+local map = vim.keymap.set --I created a variable called map, i was tired of typing vim.keymap.set for each new keymap
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>o', ':update <CR> :source<CR>')
-<<<<<<< HEAD
-map('n', '<leader>ca', ':!javac % <CR>')
-map('n', '<leader>co', ':!java % <CR>')
---map('i', '{', '<CR><Tab>{\n}\n<Esc>kO', { noremap = true, silent = true })
-vim.cmd("iabbr sysout System.out.println();<Esc>hi")   
-vim.cmd("iabbr psvm main public static void main(String[]args)")   
---Packer manager
-vim.pack.add({
-	{ src = "https://github.com/vague2k/vague.nvim" },
-=======
-vim.cmd('iabbr sysout System.out.println(\"\");<Esc>2hi')
+--compile java file
 map('n', '<leader>ca', ':!javac % <CR>')
 
+vim.cmd("iabbr sysout System.out.println();<Esc>hi")
+vim.cmd("iabbr psvm main public static void main(String[]args)")
 --Packer manager
 vim.pack.add({
 	{ src = "https://github.com/vague2k/vague.nvim" },
+	{ src = "https://github.com/vague2k/vague.nvim" },
 	{ src = "https://github.com/m4xshen/autoclose.nvim" },
->>>>>>> master
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-<<<<<<< HEAD
-=======
 	{ src = "https://github.com/nvimtools/none-ls.nvim" },
->>>>>>> master
 })
 
 --AutoCompletion
@@ -61,17 +50,13 @@ vim.cmd("set completeopt+=noselect")
 require "mason".setup()
 require "mini.pick".setup()
 require "oil".setup()
-<<<<<<< HEAD
-=======
 require "autoclose".setup()
 
-vim.lsp.enable('java', {cmd = {true}})
-
->>>>>>> master
+vim.lsp.enable({ "lua_ls", "jdtls" })
 --treesitter
 require "nvim-treesitter.configs".setup({
-  ensure_installed = {"svelte", "typescript", "javascript", "java"},
-  highlight = {enable = true}
+	ensure_installed = { "svelte", "typescript", "javascript", "java" },
+	highlight = { enable = true }
 })
 
 vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
