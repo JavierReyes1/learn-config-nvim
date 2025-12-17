@@ -52,6 +52,7 @@ require "mini.pick".setup()
 require "oil".setup()
 require "autoclose".setup()
 
+
 vim.lsp.enable({ "lua_ls", "jdtls" })
 --treesitter
 require "nvim-treesitter.configs".setup({
