@@ -25,7 +25,6 @@ vim.cmd("iabbr psvm main public static void main(String[]args)")
 --Packer manager
 vim.pack.add({
 	{ src = "https://github.com/vague2k/vague.nvim" },
-	{ src = "https://github.com/vague2k/vague.nvim" },
 	{ src = "https://github.com/m4xshen/autoclose.nvim" },
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
@@ -33,6 +32,9 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/nvimtools/none-ls.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/nvimtools/none-ls-extras.nvim" },
+
 })
 
 --AutoCompletion
@@ -52,6 +54,15 @@ require "mini.pick".setup()
 require "oil".setup()
 require "autoclose".setup()
 
+--None-ls configuration
+local null_ls = require("null-ls")
+null_ls.setup({
+	sources = {
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.completion.spell,
+		require("none-ls.diagnostics.eslint"), --Requires none-ls extras
+	},
+})
 
 vim.lsp.enable({ "lua_ls", "jdtls" })
 --treesitter
