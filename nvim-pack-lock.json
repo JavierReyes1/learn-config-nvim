@@ -16,6 +16,10 @@
       "rev": "5abf61927023ea83031753504adb19630ba80eef",
       "src": "https://github.com/nvimtools/none-ls.nvim"
     },
+    "nvim-html-css": {
+      "rev": "9d5fe0b9a4180b960ef92a2cfe8534f3e2c4f957",
+      "src": "https://github.com/Jezda1337/nvim-html-css"
+    },
     "nvim-lspconfig": {
       "rev": "b7c48a7111534b66bee077da8035ac7208a294ff",
       "src": "https://github.com/neovim/nvim-lspconfig"

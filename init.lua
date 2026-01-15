@@ -32,6 +32,7 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/nvimtools/none-ls.nvim" },
+	{ src = "https://github.com/Jezda1337/nvim-html-css" },
 })
 
 --AutoCompletion
