@@ -33,6 +33,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/nvimtools/none-ls.nvim" },
 	{ src = "https://github.com/Jezda1337/nvim-html-css" },
+	{ src = "https://github.com/windwp/nvim-ts-autotag" },
 })
 
 --AutoCompletion
@@ -51,6 +52,7 @@ require "mason".setup()
 require "mini.pick".setup()
 require "oil".setup()
 require "autoclose".setup()
+require "nvim-ts-autotag".setup()
 
 vim.lsp.enable({ "lua_ls", "jdtls" })
 --treesitter
