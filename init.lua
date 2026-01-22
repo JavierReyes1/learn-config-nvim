@@ -54,10 +54,10 @@ require "oil".setup()
 require "autoclose".setup()
 require "nvim-ts-autotag".setup()
 
-vim.lsp.enable({ "lua_ls", "jdtls" })
+vim.lsp.enable({ "lua_ls", "jdtls", "php", "html", "typescript", "javascript"})
 --treesitter
 require "nvim-treesitter.configs".setup({
-	ensure_installed = { "svelte", "typescript", "javascript", "java" },
+	ensure_installed = { "svelte", "typescript", "javascript", "java", "php", "html" },
 	highlight = { enable = true }
 })
 
