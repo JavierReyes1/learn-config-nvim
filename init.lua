@@ -1,4 +1,5 @@
 --
+--
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.wrap = false
@@ -34,6 +35,9 @@ vim.pack.add({
 	{ src = "https://github.com/nvimtools/none-ls.nvim" },
 	{ src = "https://github.com/Jezda1337/nvim-html-css" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/nvimtools/none-ls-extras.nvim" },
+
 })
 
 --AutoCompletion
@@ -53,6 +57,16 @@ require "mini.pick".setup()
 require "oil".setup()
 require "autoclose".setup()
 require "nvim-ts-autotag".setup()
+require "plenary.async"
+--None-ls configuration
+local null_ls = require("null-ls")
+null_ls.setup({
+	sources = {
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.completion.spell,
+		require("none-ls.diagnostics.eslint"), --Requires none-ls extras
+	},
+})
 
 vim.lsp.enable({ "lua_ls", "jdtls", "php", "html", "typescript", "javascript"})
 --treesitter
