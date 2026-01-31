@@ -56,8 +56,11 @@ require "mason".setup()
 require "mini.pick".setup()
 require "oil".setup()
 require "autoclose".setup()
-require "nvim-ts-autotag".setup()
 require "plenary.async"
+require "nvim-ts-autotag".setup()
+
+
+
 --None-ls configuration
 local null_ls = require("null-ls")
 null_ls.setup({
