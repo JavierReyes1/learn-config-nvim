@@ -1,8 +1,24 @@
 {
   "plugins": {
+    "LuaSnip": {
+      "rev": "dae4f5aaa3574bd0c2b9dd20fb9542a02c10471c",
+      "src": "https://github.com/L3MON4D3/LuaSnip"
+    },
     "autoclose.nvim": {
       "rev": "3f86702b54a861a17d7994b2e32a7c648cb12fb1",
       "src": "https://github.com/m4xshen/autoclose.nvim"
+    },
+    "cmp_luasnip": {
+      "rev": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90",
+      "src": "https://github.com/saadparwaiz1/cmp_luasnip"
+    },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "live-preview.nvim": {
+      "rev": "f056b4b859d54595afce53e67129f7684380d3ba",
+      "src": "https://github.com/brianhuster/live-preview.nvim"
     },
     "mason.nvim": {
       "rev": "57e5a8addb8c71fb063ee4acda466c7cf6ad2800",
@@ -19,6 +35,10 @@
     "none-ls.nvim": {
       "rev": "5abf61927023ea83031753504adb19630ba80eef",
       "src": "https://github.com/nvimtools/none-ls.nvim"
+    },
+    "nvim-cmp": {
+      "rev": "da88697d7f45d16852c6b2769dc52387d1ddc45f",
+      "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-html-css": {
       "rev": "9d5fe0b9a4180b960ef92a2cfe8534f3e2c4f957",

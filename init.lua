@@ -1,3 +1,4 @@
+--require "after" folder, this is where all my configurations will be stored
 --
 --
 vim.o.number = true
@@ -37,6 +38,15 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/nvimtools/none-ls-extras.nvim" },
+	 -- Snippet engine
+  { src = "https://github.com/L3MON4D3/LuaSnip" },
+	  -- Prebuilt snippets (VS Code / Sublime–style)
+  { src ="https://github.com/rafamadriz/friendly-snippets" },
+
+	  -- Completion (needed for Tab integration)
+  { src = "https://github.com/hrsh7th/nvim-cmp" },
+  { src = "https://github.com/saadparwaiz1/cmp_luasnip" },
+  { src = "https://github.com/brianhuster/live-preview.nvim" },
 
 })
 
@@ -58,7 +68,20 @@ require "oil".setup()
 require "autoclose".setup()
 require "plenary.async"
 require "nvim-ts-autotag".setup()
+require('livepreview.config').set()
 
+--Lua Snippets
+
+local luasnip = require("luasnip")
+
+require("luasnip.loaders.from_vscode").lazy_load()
+
+luasnip.config.set_config({
+	history = true,
+ 	updateevents = "TextChanged, TextChangedI",
+})
+
+--cmp
 
 
 --None-ls configuration
