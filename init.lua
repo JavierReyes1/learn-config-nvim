@@ -27,6 +27,7 @@ vim.cmd("iabbr psvm main public static void main(String[]args)")
 --Packer manager
 vim.pack.add({
 	{ src = "https://github.com/vague2k/vague.nvim" },
+	{ src = "https://github.com/navarasu/onedark.nvim" },
 	{ src = "https://github.com/m4xshen/autoclose.nvim" },
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
@@ -111,5 +112,8 @@ map('n', '<leader>q', ':wq <CR>')
 
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
 
-vim.cmd("colorscheme vague")
+require('onedark').setup{
+	style='darker'
+}
+vim.cmd("colorscheme onedark")
 vim.cmd(":hi statusline guibg=NONE")
