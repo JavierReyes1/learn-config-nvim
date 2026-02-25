@@ -10,6 +10,7 @@ vim.o.winborder = "rounded"
 vim.o.cursorcolumn = false
 vim.o.shiftwidth = 2
 vim.o.smartindent = true
+vim.opt.autoindent = true
 vim.o.swapfile = false
 vim.o.termguicolors = true
 vim.o.undofile = true
@@ -26,6 +27,7 @@ vim.cmd("iabbr sysout System.out.println();<Esc>hi")
 vim.cmd("iabbr psvm main public static void main(String[]args)")
 --Packer manager
 vim.pack.add({
+	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 	{ src = "https://github.com/vague2k/vague.nvim" },
 	{ src = "https://github.com/navarasu/onedark.nvim" },
 	{ src = "https://github.com/m4xshen/autoclose.nvim" },
@@ -82,6 +84,8 @@ luasnip.config.set_config({
  	updateevents = "TextChanged, TextChangedI",
 })
 
+-- indent blankline
+require("ibl").setup()
 --cmp
 
 
@@ -95,9 +99,22 @@ null_ls.setup({
 	},
 })
 
-vim.lsp.enable({ "lua_ls", "jdtls", "php", "html", "typescript", "javascript"})
+vim.lsp.enable({ "lua_ls", "jdtls", "php", "html", "typescript", "javascript", "tsserver"})
+
+vim.lsp.config('php',{})
+
+vim.lsp.config('html',{})
+
+vim.lsp.config('tsserver',{
+	cmd = {'typescript-language-server', '--stdio'},
+	filetypes = {'typescript'},
+	root_dir = vim.fs.root(0,{'package.json', 'git'}),
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
 --treesitter
 require "nvim-treesitter.configs".setup({
+	indent = {enable = true},
 	ensure_installed = { "svelte", "typescript", "javascript", "java", "php", "html" },
 	highlight = { enable = true }
 })
